@@ -1,39 +1,48 @@
-# ambanicoffee
-# an ecommerce based mern stack project
-# overview
-It is a basiclly an ecommerce based project , where a user (only authenticate user ) can order or buy something an can make aan online payment .
-and also there is an admin pannel also where admin can handle order and product addition and deletion or updation
-# Features
-In my ambanicoffee project I have created maily two main flow or implementation
-## 1.admin 
-        This mode only for the owner of application or cafe . There is most of the features are available for admin.
-        (eg. create a new product category and product ,set price and stock , manage order status etc .)
-        admin pannel secure , that is only admin can login (for test , email : admin@admin.com  and password : 123456 )
-## 2.User
-      This mode only for single or multiple users , who wants to avail the services provided by application or owner 
-      There is many features regards user (eg . add one or many items into cart can make a payment and check the 
-      similiar product etc )You can register into this application for test purpose .
-# Deployed link for demo
-I have deployed this project on cyclic.
-Link : https://cerulean-hedgehog-shoe.cyclic.app/
+# AmbaniCoffee
 
-### Start Development
-            $ npm run dev
+AmbaniCoffee is an eCommerce platform built using the MERN stack, designed to facilitate online shopping and payment transactions.
 
-### simple build for production
-            $ npm run build
+## Overview
 
-### Tools and Technology
+AmbaniCoffee is an eCommerce project where authenticated users can browse products, add them to their cart, make online payments, and track their orders. Additionally, an admin panel is available for managing products, categories, orders, and more.
 
-- MongoDB
-- Express.js
-- React.js
-- Node.js
-- Braintree and Paypal (for payment integration )
-- Bootstrap
-- HTML
-- CSS
-- Postman
+## Features
 
-# code formatter 
- VS code
+### Admin Panel
+
+- **Product Management**: Create, update, and delete products and categories.
+- **Order Management**: Manage order statuses and view order details.
+
+To access the admin panel for testing:
+- **Email**: admin@admin.com
+- **Password**: 123456
+
+### User Interface
+
+- **Shopping Experience**: Users can browse products, add items to cart, and proceed to checkout.
+- **Payment Integration**: Secure payments via Braintree and PayPal.
+- **User Registration**: Users can create accounts to manage their orders and preferences.
+
+## Demo
+
+A live demo of the AmbaniCoffee project is deployed on Render:
+- [AmbaniCoffee Demo](https://ambanicoffee-1.onrender.com/)
+
+## Getting Started
+
+### Development
+
+To start development, clone the repository and install dependencies:
+
+```bash
+$ npm install
+$ npm run dev
+
+## Tools and Technologies
+
+- **Database**: MongoDB
+- **Backend**: Node.js, Express.js
+- **Frontend**: React.js, Bootstrap, HTML, CSS
+- **Payment Integration**: Braintree, PayPal
+- **API Testing**: Postman
+- **Code Editor**: Visual Studio Code
