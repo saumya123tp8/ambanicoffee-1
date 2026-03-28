@@ -1,4 +1,4 @@
-# Sorce Code : Frontend/Backend [Backend_Frontend_code](https://github.com/saumya123tp8/AMBANICOFEE-sourcecode/tree/main/AMBANICOFFEE-Sourcecode/)
+# Sorce Code : Frontend/Backend [Backend_Frontend_code](https://github.com/saumya123tp8/Ambani_Coffee_Source_Code)
 # AmbaniCoffee
 
 AmbaniCoffee is an eCommerce platform built using the MERN stack, designed to facilitate online shopping and payment transactions.
