@@ -1,0 +1,55 @@
+
+  .slick-slide {
+    /* border: 2px solid rgb(51, 255, 0); */
+    /* width: 3% !important; */
+    padding-right: 10px; /* Adjust the value to set the desired space between the boxes */
+    padding-left: 10px; /* Adjust the value to set the desired space between the boxes */
+  }
+  /* Custom styles for the Slider arrows */
+
+.slick-next {
+  position: absolute;
+  top: 95%;
+  transform: translatex(35%);
+  z-index: 1;
+  color: rgb(174, 37, 37);
+}
+
+.slick-prev {
+    position: absolute;
+    top: 95%;
+    transform: translatex(-35%);
+    z-index: 1;
+    color: rgb(24, 128, 1);
+}
+@media (max-width: 767px) {
+    /* Styles for mobile devices (1 slide to show) */
+    
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* Styles for tablet devices (2 slides to show) */
+  }
+  
+  @media (min-width: 992px) {
+    /* Styles for desktop devices (3 slides to show) */
+    slick-prev{
+        position: absolute;
+        top:100%;
+        z-index: 1;
+    }
+    slick-next{
+        top:0%;
+        z-index: 1;
+    }
+  }
+
+  .custom-dots {
+    position: absolute;
+    top:95%;
+    /* bottom: 30px; Adjust the distance from the bottom as needed */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  

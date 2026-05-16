@@ -1,0 +1,19 @@
+.dashbrd {
+    /* border: 2px solid red; */
+    flex-wrap: wrap;
+    margin-top: 80px !important;
+  }
+
+
+
+  /* about page */
+  .about-container {
+    overflow-y: scroll; /* Enable vertical scroll */
+    height: 400px; /* Set the height of the container */
+  }
+  @media (max-width: 768px) {
+    .about-container {
+      overflow-y: scroll; /* Enable vertical scroll */
+      height: 200px; /* Set the height of the container */
+    }
+  }

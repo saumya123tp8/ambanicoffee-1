@@ -1,0 +1,151 @@
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500&display=swap');
+
+
+.categories-page {
+          padding: 2.5rem 1.5rem;
+          font-family: 'DM Sans', sans-serif;
+        }
+
+        .categories-header {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .categories-eyebrow {
+          font-size: 11px;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          color: #a07850;
+          margin-bottom: 8px;
+          font-weight: 500;
+        }
+
+        .categories-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 2.4rem;
+          font-weight: 600;
+          color: #1a1a1a;
+          line-height: 1.2;
+        }
+
+        .categories-title span { color: #c8864a; }
+
+        .categories-divider {
+          width: 48px;
+          height: 2px;
+          background: #c8864a;
+          margin: 1rem auto 0;
+          border-radius: 2px;
+        }
+
+        .categories-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+          gap: 20px;
+          max-width: 960px;
+          margin: 0 auto;
+        }
+
+        .cat-link { text-decoration: none; }
+
+        .cat-card {
+          border-radius: 18px;
+          border: 1px solid rgba(0,0,0,0.07);
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+          background: #fff;
+        }
+
+        .cat-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+        }
+
+        .cat-card:hover .cat-3d-object {
+          animation-play-state: running;
+          transform: rotateY(360deg) rotateX(15deg) scale(1.15);
+        }
+
+        .cat-anim-area {
+          height: 130px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .cat-anim-bg {
+          position: absolute;
+          inset: 0;
+          opacity: 0.6;
+        }
+
+        .cat-3d-object {
+          font-size: 58px;
+          position: relative;
+          z-index: 1;
+          transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+          filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
+          animation: float 3s ease-in-out infinite;
+          transform-style: preserve-3d;
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotateZ(-3deg); }
+          50%       { transform: translateY(-10px) rotateZ(3deg); }
+        }
+
+        .cat-card:hover .cat-3d-object {
+          animation: none;
+          transform: translateY(-8px) rotateY(25deg) rotateX(10deg) scale(1.2);
+          filter: drop-shadow(0 16px 24px rgba(0,0,0,0.25));
+        }
+
+        .cat-shine {
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.35);
+          top: 12px;
+          right: 18px;
+          z-index: 0;
+          filter: blur(12px);
+        }
+
+        .cat-body {
+          padding: 1rem 1.1rem 1.2rem;
+        }
+
+        .cat-tag {
+          display: inline-block;
+          font-size: 10px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: 500;
+          padding: 3px 9px;
+          border-radius: 20px;
+          margin-bottom: 6px;
+        }
+
+        .cat-name {
+          font-size: 15px;
+          font-weight: 500;
+          color: #1a1a1a;
+          margin: 0;
+          line-height: 1.3;
+        }
+
+        .cat-arrow {
+          display: inline-block;
+          margin-top: 8px;
+          font-size: 13px;
+          font-weight: 500;
+          opacity: 0;
+          transform: translateX(-4px);
+          transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .cat-card:hover .cat-arrow { opacity: 1; transform: translateX(0); }

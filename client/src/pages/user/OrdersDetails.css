@@ -1,0 +1,543 @@
+/* ─────────────────────────────────────────────────────────────────
+   OrdersDetails.css  —  matches the Bite.rush dark dashboard theme
+   Variables mirror the existing dashboard palette
+───────────────────────────────────────────────────────────────── */
+
+:root {
+  --accent:        #FF6B35;
+  --accent-light:  #ff8c5a;
+  --accent-dark:   #ff5520;
+  --teal:          #2EC4B6;
+  --gold:          #F7B731;
+  --bg-card:       rgba(255, 255, 255, 0.03);
+  --border:        rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.1);
+  --text-primary:  #ffffff;
+  --text-body:     #e0d8cc;
+  --text-muted:    #888888;
+  --text-dim:      #555555;
+  --text-light:    #aaaaaa;
+  --text-sub:      #cccccc;
+}
+
+/* ── Root wrapper ──────────────────────────────────────────────── */
+.od-root {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-body);
+  padding: 0 0 48px;
+}
+
+/* ── Shared card ───────────────────────────────────────────────── */
+.od-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 16px;
+}
+
+/* ── Section label ─────────────────────────────────────────────── */
+.od-section-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: 0.3px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────── */
+.od-btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.od-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+.od-btn-primary:active {
+  transform: scale(0.97);
+}
+.od-btn-primary:disabled,
+.od-btn-primary.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.od-btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  color: #bbb;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.od-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.od-btn-ghost-sm {
+  background: rgba(255, 255, 255, 0.05);
+  color: #bbb;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s;
+}
+.od-btn-ghost-sm:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* ── Header ────────────────────────────────────────────────────── */
+.od-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.od-header-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.od-header-title span {
+  color: var(--accent);
+}
+
+.od-header-meta {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+.od-status-badge {
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Order Tracker ─────────────────────────────────────────────── */
+.od-tracker-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.od-tracker-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72px;
+}
+
+.od-tracker-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.od-tracker-dot.done {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  font-size: 18px;
+  border: none;
+}
+
+.od-tracker-dot.pending {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+}
+
+.od-tracker-dot.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  font-size: 18px;
+  border: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3), 0 0 20px rgba(255, 107, 53, 0.4);
+}
+
+.od-tracker-dot-num {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+.od-tracker-label {
+  font-size: 10px;
+  margin-top: 6px;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 64px;
+}
+
+.od-tracker-label.done  { color: var(--accent); font-weight: 400; }
+.od-tracker-label.active { color: var(--accent); font-weight: 700; }
+.od-tracker-label.pending { color: var(--text-dim); font-weight: 400; }
+
+.od-tracker-line {
+  flex: 1;
+  height: 2px;
+  margin: 0 4px;
+  margin-bottom: 22px;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.od-tracker-line.done    { background: var(--accent); }
+.od-tracker-line.pending { background: rgba(255, 255, 255, 0.07); }
+
+/* ── Items ─────────────────────────────────────────────────────── */
+.od-item-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+}
+
+.od-item-row + .od-item-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.od-item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.od-item-info {
+  flex: 1;
+}
+
+.od-item-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.od-item-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.od-item-rating {
+  font-size: 12px;
+  color: var(--gold);
+}
+
+.od-item-rating span {
+  color: var(--text-dim);
+  margin-left: 4px;
+}
+
+.od-item-price {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.od-item-price-total {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.od-item-price-unit {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+/* ── Bill Summary ──────────────────────────────────────────────── */
+.od-bill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.od-bill-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.od-bill-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.od-bill-total-amount {
+  color: var(--accent);
+}
+
+.od-payment-row {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.od-payment-row-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.od-payment-icon {
+  font-size: 20px;
+}
+
+.od-payment-method {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.od-payment-sublabel {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.od-payment-status {
+  font-size: 12px;
+  color: var(--teal);
+  font-weight: 600;
+  background: rgba(46, 196, 182, 0.12);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+/* ── Delivery address ──────────────────────────────────────────── */
+.od-address-text {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── Rating Section ────────────────────────────────────────────── */
+.od-rating-prompt {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.od-rated-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.od-review-quote {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(247, 183, 49, 0.07);
+  border: 1px solid rgba(247, 183, 49, 0.15);
+  color: var(--text-sub);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ── Star Rating ───────────────────────────────────────────────── */
+.od-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.od-star {
+  display: inline-block;
+  line-height: 1;
+  transition: color 0.15s, transform 0.1s;
+}
+
+.od-star.interactive {
+  cursor: pointer;
+}
+
+.od-star.readonly {
+  cursor: default;
+}
+
+/* ── Action Buttons Row ────────────────────────────────────────── */
+.od-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.od-actions .od-btn-primary,
+.od-actions .od-btn-ghost {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* ── Modal Overlay ─────────────────────────────────────────────── */
+.od-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.od-modal {
+  background: #1a1714;
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+.od-modal-scrollable {
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.od-modal-title {
+  color: var(--text-primary);
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.od-modal-sub {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 0 0 18px;
+}
+
+.od-modal-success-icon {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.od-modal-success-title {
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.od-modal-success-sub {
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+/* ── Report Issue List ─────────────────────────────────────────── */
+.od-issue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.od-issue-item {
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.15s;
+}
+
+/* ── Modal Textarea ────────────────────────────────────────────── */
+.od-modal-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 12px;
+  color: var(--text-sub);
+  font-size: 13px;
+  resize: vertical;
+  min-height: 72px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+}
+
+.od-modal-textarea:focus {
+  border-color: rgba(255, 107, 53, 0.4);
+}
+
+/* ── Modal Buttons ─────────────────────────────────────────────── */
+.od-modal-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* ── Rating Modal Item Card ────────────────────────────────────── */
+.od-rating-item-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+}
+
+.od-rating-item-name {
+  color: var(--text-body);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* ── Invoice (print-only, hidden in UI) ────────────────────────── */
+.od-invoice-hidden {
+  display: none;
+}
+
+
+
+
