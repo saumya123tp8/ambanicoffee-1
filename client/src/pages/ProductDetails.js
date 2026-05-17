@@ -54,6 +54,8 @@ const ProductDetails = () => {
     sweetness: "",
     coffeeStrength: "",
   });
+  const [rating, setRating] = useState(5);
+  const [comment, setComment] = useState("");
 
   const [showCustomizationModal, setShowCustomizationModal] = useState(false);
 
@@ -111,6 +113,33 @@ const ProductDetails = () => {
     useEffect(() => {
       initializeBuy();
     }, [cart]);
+
+    const addReviewForProduct = async () => {
+    try {
+      const { data } = await axios.post(
+        `/api/v1/productReview/product-review/`,
+        {
+          productId: product._id,
+          rating,
+          comment,
+        },
+      );
+
+      if (data?.success) {
+        toast.success("Review added successfully");
+
+        // refresh reviews
+        getAllReviews();
+
+        // reset form
+        setRating(0);
+        setComment("");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to add review" + { error });
+    }
+  };
   const handleAdd = (p) => {
     try {
       // Compare customization dynamically
@@ -581,6 +610,45 @@ const ProductDetails = () => {
         </div>
         {/* Reviews */}
         <div className="reviews-section mt-5">
+
+          <div className="add-review-box mb-4 p-3 border rounded">
+                    <h5>Add Your Review</h5>
+
+                    {/* ✅ Fixed star rating input */}
+                    <div className="mb-3 d-flex align-items-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <FaStar
+                          key={star}
+                          onClick={() => setRating(star)}
+                          className={
+                            star <= rating ? "text-warning" : "text-muted"
+                          }
+                          style={{
+                            cursor: "pointer",
+                            fontSize: "24px",
+                            marginRight: "5px",
+                          }}
+                        />
+                        // {reviews}
+                      ))}
+                    </div>
+                    {/* <h1>{typeof FaStar}</h1> */}
+                    <textarea
+                      className="form-control mb-2"
+                      placeholder="Write your review..."
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                    />
+
+                    {/* 🚀 Submit */}
+                    <button
+                      className="btn btn-primary"
+                      onClick={addReviewForProduct}
+                    >
+                      Submit Review
+                    </button>
+                  </div>
+
           <div className="reviews-header" onClick={getAllReviews}>
             <h4>Reviews ({product.totalReviews})</h4>
 

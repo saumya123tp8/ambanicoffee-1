@@ -359,7 +359,10 @@ const quantitChangeCartItem = (pid, cartQuantity) => {
     try {
       const { data } = await axios.get("/api/v1/product/braintree/token");
       setClientToken(data?.clientToken);
+      console.log(data);
+      console.log(clientToken);
     } catch (err) {
+      console.error("err token");
       console.error(err);
     }
   };
@@ -381,9 +384,12 @@ const quantitChangeCartItem = (pid, cartQuantity) => {
       navigate("/dashboard/user/");
       toast.success("Payment completed successfully!");
     } catch (err) {
-      console.error(err);
+      console.error("err");
+      console.error(err?.message);
+      // console.log(DropinError)
       setLoading(false);
-      toast.error("Payment failed. Please try again.");
+      toast.error("Payment failed"+" ( "+err?.message+" )");
+      // toast.error("Payment failed. Please try again.");
     }
   };
 
