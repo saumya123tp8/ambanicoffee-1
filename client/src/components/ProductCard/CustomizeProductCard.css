@@ -223,13 +223,13 @@ textarea {
   }
   .btn-cancel,
   .btn-confirm {
+    display: flex;
     padding: 8px 12px;
 
     font-size: 12px;
 
     border-radius: 8px;
 
-    flex: 1;
   }
 }
 
@@ -239,3 +239,11 @@ textarea {
   pointer-events: none;
 }
 
+.btn-option{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  flex: 1;
+}

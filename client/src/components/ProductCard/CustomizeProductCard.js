@@ -157,8 +157,9 @@ export default function CustomizeProductCard({
                   Add Quantity
                 </button>
               )}
+              <div className="btn-option">
              <button
-                className="btn-cancel"
+                className="btn-confirm"
                 onClick={() => closeCustomizationModal()}
               >
                 Confirm Below Order
@@ -176,6 +177,7 @@ export default function CustomizeProductCard({
               >
                 Add new to Cart
               </button>
+              </div>
             </div>
           <div className="modal-current">
               <CustomizeDeleteProductCard
